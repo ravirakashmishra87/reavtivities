@@ -4,9 +4,9 @@ import ActivityCard from "./ActivityCard";
 type Prop = {
     activities: Activity[];
     selectActivity: (id: string) => void;
-    deleteActivity: (id: string) => void;
+
 }
-export default function ActivityList({ activities, selectActivity, deleteActivity }: Prop) {
+export default function ActivityList({ activities, selectActivity }: Prop) {
 
     console.log("Activity list....")
     console.log(activities as Activity[])
@@ -16,7 +16,6 @@ export default function ActivityList({ activities, selectActivity, deleteActivit
                 activity => (<ActivityCard key={activity.id}
                     activity={activity}
                     selectActivity={selectActivity}
-                    deleteActivity={deleteActivity}
                 />))}
         </Box>
     )
